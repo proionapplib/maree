@@ -1,15 +1,18 @@
 # Site de documentation de Marée
 
-Trois pages statiques, sans dépendance et sans JavaScript, pour les deux URL
-qu'App Store Connect réclame.
+Deux pages statiques, sans dépendance et sans JavaScript : uniquement les
+deux URL qu'App Store Connect réclame, rien d'autre.
 
 | Fichier | Sert à |
 |---|---|
-| `index.html` | Accueil, et point d'entrée obligatoire de GitHub Pages |
 | `confidentialite.html` | **Privacy Policy URL** d'App Store Connect |
 | `support.html` | **Support URL** d'App Store Connect |
-| `style.css` | Jetons de design reprises de l'app |
+| `style.css` | Jetons de design repris de l'app |
 | `fonts/` | Fredoka et Nunito, auto-hébergées, avec leurs licences OFL |
+
+Il n'y a **pas de page d'accueil** : la racine du site renvoie un 404, ce qui
+est sans conséquence puisque Apple ne demande que les deux adresses
+ci-dessous. Les deux pages se renvoient l'une à l'autre.
 
 ## Valeurs en place
 
@@ -21,7 +24,7 @@ qu'App Store Connect réclame.
 Pour les changer, passe partout d'un coup :
 
 ```bash
-sed -i '' 's/contact@proion\.fr/nouvelle@adresse.fr/g' index.html confidentialite.html support.html
+sed -i '' 's/contact@proion\.fr/nouvelle@adresse.fr/g' confidentialite.html support.html
 ```
 
 Et pense à remonter la date en haut de `confidentialite.html` si le fond
@@ -37,11 +40,11 @@ change.
    de navigation privée**. C'est le test qui compte : si elles s'affichent
    sans être connecté, un reviewer d'Apple les verra aussi.
 
-Les URL ressembleront à :
+Les deux URL en ligne :
 
 ```
-https://<compte>.github.io/<dépôt>/confidentialite.html
-https://<compte>.github.io/<dépôt>/support.html
+https://proionapplib.github.io/maree/confidentialite.html
+https://proionapplib.github.io/maree/support.html
 ```
 
 Ce sont ces deux adresses à coller dans App Store Connect, dans
